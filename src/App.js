@@ -2,24 +2,24 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    //入力テキストボックスのコンポーネント
+    function ValueInput(props) {
+        return <input type="text" value={ props.value } />
+    }
+
+    //答えテキストボックスのコンポーネント
+    function ValueAnswer(props) {
+        return <span>{props.value}</span>
+    }
+
+    return (
+        <div>
+            <ValueInput value="5" /> + <ValueInput value="8" /> = <ValueAnswer value="13" />
+        </div>
+    );
 }
 
 export default App;
+
+//  コンポーネントをクラスで表現する」まで組み込みました。2023/04/26
