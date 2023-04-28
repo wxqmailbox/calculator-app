@@ -41,38 +41,37 @@ class Calculator extends React.Component {
             value2: 0,
             answer: 0
         }
-}
+    }
 
-//左テキストボックス用変更メソッド
-changeValue1(newValue) {
-    let ans = parseInt(newValue) + parseInt(this.state.value2)
-    this.setState({
-        value1: newValue,
-        answer: ans
-    })
-}
-
-
-//右テキストボックス用変更メソッド
-changeValue2(newValue) {
-    let ans = parseInt(newValue) + parseInt(this.state.value1)
-    this.setState({
-        value2: newValue,
-        answer: ans
-    })
-}
+    //左テキストボックス用変更メソッド
+    changeValue1(newValue) {
+        let ans = parseInt(newValue) + parseInt(this.state.value2)
+        this.setState({
+            value1: newValue,
+            answer: ans
+        })
+    }
 
 
-render() {
-    const newValue1 = this.state.value1
-    const newValue2 = this.state.value2
-    return (
-            <div>
-                <ValueInput value={newValue1} valueChange={this.changeValue1} /> +
-                <ValueInput value={newValue2} valueChange={this.changeValue2} /> =
-                <ValueAnswer value={this.state.answer} />
-            </div>
-           );
+    //右テキストボックス用変更メソッド
+    changeValue2(newValue) {
+        let ans = parseInt(newValue) + parseInt(this.state.value1)
+        this.setState({
+            value2: newValue,
+            answer: ans
+        })
+    }
+
+    render() {
+        const newValue1 = this.state.value1
+        const newValue2 = this.state.value2
+        return (
+                <div>
+                    <ValueInput value={newValue1} valueChange={this.changeValue1} /> +
+                    <ValueInput value={newValue2} valueChange={this.changeValue2} /> =
+                    <ValueAnswer value={this.state.answer} />
+                </div>
+        );
     }
 }
 
